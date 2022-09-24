@@ -1,0 +1,222 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-image: linear-gradient(to left, #ADBFFD, #F4A8D3, #FFE375, #B3FFC5, #7CEAAD, #7FB1FE);
+    
+}
+.contenedor{
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4,auto) ;
+   
+    grid-template-areas: "header header header"
+                         "contenido contenido sidebar"
+                         "widget-1 widget-2 sidebar"
+                         "footer footer footer";                   
+    
+}
+.contenedor > div,
+.contenedor .header,
+.contenedor .contenido,
+.contenedor .sidebar,
+.contenedor .footer{
+   
+    padding: 20px;
+    border-radius: 4px;
+}
+.contenedor .header {
+    
+    grid-area: header;
+}
+.contenedor .header >img {
+    height: 100px;
+    width: 150px;
+    filter: drop-shadow(4px 4px 3px black);
+}
+.contenedor .contenido{
+    border-radius: 20px;
+    height: 400px;
+    margin: 0;
+    padding: 0;
+    grid-area: contenido;
+}
+/*Entrada input*/
+.contenedor .contenido #entrada{
+    background: rgb(255,255,255,.2);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, .5);
+    color: #890B3B;
+    font-size: large;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align:center;
+    outline: none;
+    border-radius: 20px;
+    border: none;
+    width: 100%;
+    height: 100%;
+    resize: none;
+}
+.contenedor .contenido #entrada::placeholder{
+ color: #890B3B;
+}
+
+.contenedor .sidebar{
+    border-radius: 20px;
+  
+    grid-column: 3 / 4;
+    grid-area: sidebar;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6,auto) ;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-areas: "mostrar mostrar"
+                         "mostrar mostrar"
+                         "mostrar mostrar"
+                         "mostrar mostrar"
+                         "mostrar mostrar"
+                         "widget-0 widget-0";   
+}
+
+.contenedor .sidebar #mostrar{
+    border-radius: 20px;
+    width: 100%;
+    grid-area: mostrar;  
+    
+}
+.contenedor .sidebar #mostrar #pista::placeholder{
+    color: #890B3B;
+}
+/*textarea*/
+.contenedor .sidebar #mostrar #pista{
+    background: rgb(255,255,255,.2);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, .5);
+    color: #890B3B;
+    font-size: large;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border: none;
+    text-align: center;
+    vertical-align: middle;
+    outline: none;
+    border-radius: 20px;
+    width: 95%;
+    height: 100%;
+    resize: none;
+    padding: 10px;
+    
+}
+
+.contenedor .widget-1,
+.contenedor .widget-2{
+    
+    color: #fff;
+    height: 30px;
+    margin-left: 30px;
+    margin-right: 30px;
+    padding: 0;
+    text-align: center;
+    align-items:center;
+    justify-content: center;
+}
+.contenedor .widget-1{
+    grid-area: widget-1;
+}
+.contenedor .widget-1 #aceptar{
+    margin-top: 30px;
+    margin-left: 0px;
+    width: 100%;
+    height: 40px;
+    background: linear-gradient(#877BDC, #92ECEC);
+    font-size: large;
+    font-family: fantasy;
+    border: none;
+    -webkit-text-stroke: 1px black;
+    color: #FFE375;
+    border-radius: 15PX;
+    box-shadow: -5px -5px 10px #7FB1FE, 5px 5px 5px black,
+               inset 0px 0px 0px #7FB1FE,
+               inset 0px 0px 0px black;
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+.contenedor .widget-1 #aceptar:hover{
+    transform: translate(1PX,5PX);
+    box-shadow: 3px 4px 7px #531741;
+}
+.contenedor .widget-2{
+    grid-area: widget-2;
+}
+.contenedor .widget-2 #cancelar{
+    margin-top: 30px;
+    margin-left: 0px;
+    width: 100%;
+    height: 40px;
+    background: linear-gradient(#877BDC, #92ECEC);
+    font-size: large;
+    font-family: fantasy;
+    border: none;
+    -webkit-text-stroke: 1px black;
+    color: #FFE375;
+    border-radius: 15PX;
+    box-shadow: -5px -5px 10px #7FB1FE, 5px 5px 5px black,
+               inset 0px 0px 0px #7FB1FE,
+               inset 0px 0px 0px black;
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+.contenedor .widget-2 #cancelar:hover{
+    transform: translate(1PX,5PX);
+    box-shadow: 3px 4px 7px #531741;
+}
+.contenedor .footer{
+    margin-top: 10px;
+    color: black;
+    grid-area: footer;
+    text-align: center;
+    font-family: monospace;
+    color: #3D3C84;
+   
+}
+.contenedor .footer >img{
+    max-height: 20px;
+    max-width: 10%;
+}
+p{
+ color: #531741;   
+ font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+ font-size:smaller;
+}
+@media screen and (max-width: 768px){
+    .contenedor{
+        grid-template-areas: "header header header"
+                             "contenido contenido contenido"
+                             "sidebar sidebar sidebar"
+                             "widget-1 widget-1 widget-2 "
+                             "footer footer footer";
+    }
+    .contenedor .contenido{
+        height: 100px;
+    }
+    .contenedor .sidebar{
+        height: 250px; 
+        
+    }
+
+}
+@media screen and (max-width: 480px){
+    .contenedor{
+        grid-template-areas: "header header header"
+                             "contenido contenido contenido"
+                             "sidebar sidebar sidebar"
+                             "widget-1 widget-1 widget-1 "
+                             "widget-2 widget-2 widget-2 "
+                             "footer footer footer";
+    }
+
+}

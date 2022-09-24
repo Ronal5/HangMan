@@ -1,0 +1,139 @@
+body{
+    background-image: linear-gradient(to right, #ADBFFD, #F4A8D3, #FFE375, #B3FFC5, #7CEAAD, #7FB1FE);
+}
+.content{
+    position: relative;
+    width: 90%;
+    margin: 20px auto;
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(1,1fr);
+    grid-template-rows: repeat (4, auto);
+}
+.content .header{
+    max-height: 100px;
+}
+.content .header > a> img{
+    height: 100px;
+    width: 150px;
+    filter: drop-shadow(4px 4px 3px black);
+}
+.content .portada{
+    background-image: url("../img/portada.png");
+    background-size: 100% 100%;
+    width: 60%;
+    min-height: 300px;
+    margin-left: 20%;
+    filter: drop-shadow(4px 4px 3px black);
+    animation: movimiento 2.5s linear infinite;
+}
+.content .butons{
+    min-height: 200px;
+    text-align: center;
+
+}
+.content .butons >button{
+    
+    margin-top: 30px;
+    margin-left: 0px;
+    width: 150px;
+    height: 40px;
+    background: linear-gradient(#877BDC, #92ECEC);
+    font-size: large;
+    font-family: fantasy;
+    border: none;
+    -webkit-text-stroke: 1px black;
+    color: #FFE375;
+    border-radius: 15PX;
+    box-shadow: -5px -5px 10px #7FB1FE, 5px 5px 5px black,
+               inset 0px 0px 0px #7FB1FE,
+               inset 0px 0px 0px black;
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+.content .butons >button:active{
+    width: 145px;
+    height: 35px;
+    margin-right: 3px;
+    box-shadow: 0px 0px 0px #fff,
+              0px 0px 0px #c1c1c1,
+              inset -10px -10px 15px #fff,
+              inset 10px 10px 15px #c1c1c1;
+              font-size: x-large;
+              font-family: fantasy;
+              border: none;
+              -webkit-text-stroke: 1px black;
+              color: #FFE375;
+              border-radius: 15PX;
+}
+.content .butons >button:hover{
+    -webkit-text-stroke: 1px #B3FFC5;
+}
+.content .butons >a >button{
+    
+    margin-top: 30px;
+    margin-right: 10px;
+    width: 150px;
+    height: 40px;
+    background: linear-gradient(#877BDC, #92ECEC);
+    font-size: large;
+    font-family: fantasy;
+    border: none;
+    -webkit-text-stroke: 1px black;
+    color: #FFE375;
+    border-radius: 15PX;
+    box-shadow: -5px -5px 10px #7FB1FE, 5px 5px 5px black,
+               inset 0px 0px 0px #7FB1FE,
+               inset 0px 0px 0px black;
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+.content .butons >a >button:active{
+    width: 145px;
+    height: 35px;
+    margin-right: 15px;
+    box-shadow: 0px 0px 0px #fff,
+              0px 0px 0px #c1c1c1,
+              inset -10px -10px 15px #fff,
+              inset 10px 10px 15px #c1c1c1;
+              font-size: large;
+              font-family:fantasy;
+              border: none;
+              -webkit-text-stroke: 1px black;
+              color: #FFE375;
+              border-radius: 15PX;
+}
+.content .butons >a >button:hover{
+    -webkit-text-stroke: 1px #B3FFC5;
+}
+.content .footer{
+    min-height: 100px;
+    text-align: center;
+    font-family: monospace;
+    color: #3D3C84;
+}
+.content .footer >img{
+    max-height: 20px;
+    max-width: 10%;
+}
+
+@keyframes movimiento{
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(30px);
+    }
+    100%{
+        transform: translate(0);
+    }
+}
+@media screen and (max-width: 480px){
+    .content .portada{
+        min-height: 200px;
+    }
+    .content .butons >a >button{
+        margin-left: 8px;
+    }
+    
+}
